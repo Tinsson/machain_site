@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>后台管理界面</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+  	<link rel="stylesheet" type="text/css" href="../css/main.css">
+  	<script src="../js/jquery.js"></script>
+  	<script src="../js/bootstrap.js"></script>
+  	<script src="../js/icheck.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<body>
+	<!-- 头部输出 -->
+	<div id ="header">
+		<h3>
+			<a href="index.html">
+				<img src="../images/logo.png">
+			</a>
+		</h3>
+	</div>
+	<!-- 头部信息 -->
+	<div id="user-nav" class="navbar">
+		<ul class="nav">
+			<li class="dropdown" id="profile-msg">
+				<a href="#" data-toggle="dropdown" data-target="#profile-msg" class="dropdown-toggle up-line">
+					<i class="icon icon-user"></i>
+					<span class="text">欢迎Admin</span>
+					<b class="caret"></b>
+				</a>
+			</li>
+			<li>
+				<a href="login.html">
+					<i class="icon icon-share-alt"></i>
+					<span class="text">退出</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 右侧导航栏 -->
+	<div id="sidebar">
+		<ul>
+			<li>
+				<a class="submenu" href="javascript:;">
+					<i class="icon icon-briefcase"></i>
+					<span>产品管理</span>
+					<b class="caret"></b>
+				</a>
+				<ul>
+					<li>
+						<a href="index.html"><i class="icon icon-chevron-right"></i>　产品列表</a>
+					</li>
+					<li>
+						<a href="product_creat.html"><i class="icon icon-chevron-right"></i>　新建产品</a>
+					</li>
+				</ul>
+			</li>
+			<li class="active">
+				<a class="submenu" href="javascript:;">
+					<i class="icon icon-folder-close"></i>
+					<span>新闻管理</span>
+					<b class="caret"></b>
+				</a>
+				<ul>
+					<li>
+						<a href="article.html"><i class="icon icon-chevron-right"></i>　新闻列表</a>
+					</li>
+					<li>
+						<a href="article_add.html"><i class="icon icon-chevron-right"></i>　添加新闻</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- 中心区域 -->
+	<div id="content" style="padding-bottom:200px">
+		<div id="content-header">
+			<div id="breadcrumb">
+				<span href="" class="tip-bottom">
+					<i class="icon icon-folder-close"></i>
+					<span> 文章管理　</span>
+					<i class="icon icon-chevron-right"></i>
+					<span> 文章列表</span>
+				</span>
+			</div>
+			<div class="filter">
+				<from class="form-inline" role="form">
+					<div class="form-group">
+					    <div class="col-md-5">
+						    <input type="text" class="form-control" id="name" placeholder="请输入关键词">
+					    </div>
+					 </div>
+					<div class="form-group" style="margin-right:15px">
+					    <button type="submit" class="btn btn-default">筛选</button>
+					 </div>
+				</from>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<form action="">
+			<table class="table table-bordered table-responsive">
+				<thead>
+					<tr>
+						<th>
+							<input id="selectall" type="checkbox" name="title-table-checkbox" value="true">
+						</th>
+						<th>编号</th>
+						<th>文章标题</th>
+						<th>文章内容</th>
+						<th>时间</th>
+						<th style="width:300px">操作</th>
+				</thead>
+				<tbody id="articlelist">
+					<tr>
+						<td>
+								<input type="checkbox" name="title-table-checkbox">
+						</td>
+						<td>1</td>
+						<td>国务院这一年:简政放权红利你get到了么</td>
+						<td>内容1内容1内容1内容1内容1内容1内容1内容...</td>
+						<td>2015-10-02</td>
+						<td>
+							<a class="btn btn-info" href="article_add.html" role="button">修改</a>
+							<a class="btn btn-danger singledel" href="#" role="button">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+			<div class="pull-left">
+				<button id="batchdel" class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="icon icon-trash"></i> 批量删除</button>
+			 	<a id="newbuild" class="btn btn-primary" href="article_add.html"><i class="icon icon-plus"></i> 新建文章</a>
+			</div>
+			<div class="col-md-5 pull-right">
+				<nav>
+					<ul class="pagination" style=" float:right; margin:0">
+						<li>
+							<a href="" data-ci-pagination-page="1" rel="start">第一页</a></li>
+						<li class="active">
+							<a>1</a>
+						</li>
+						<li>
+							<a href="" data-ci-pagination-page="2">2</a>
+						</li>
+						<li>
+							<a href="" data-ci-pagination-page="3">3</a>
+						</li>
+						<li>
+							<a href="" data-ci-pagination-page="4">4</a>
+						</li>
+						<li>
+							<a href="" data-ci-pagination-page="2" rel="next">下一页</a>
+						</li>
+						<li>
+							<a href="" data-ci-pagination-page="207">尾页</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">
+						确认删除
+					</h4>
+				</div>
+				<div class="modal-body">
+					确认要删除吗？
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button id="established" type="button" class="btn btn-danger" data-dismiss="modal">
+						删除
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		(function(){
+			var subM = $(".submenu"),sec = $("#selectall");
+			subM.click(function(){
+				$(this).next().slideToggle();
+			});
+			sec.click(function(){
+				if($(this).is(":checked")){
+					$("tr input").iCheck("check");
+				}else{
+					$("tr input").iCheck("uncheck");
+				}
+			});
+			// 查看功能
+			var tbId = $("#stafflist");
+			$(".lookup").click(function(){
+				
+
+
+
+			})
+			// 删除
+			$(".singledel").click(function(){
+				if(confirm("确认删除")){
+					
+				}else{
+					return false;
+				}
+			})
+			// 批量删除
+			var tbId = $("#articlelist");
+			$("#batchdel").click(function(){
+				var index = tbId.children().length;
+				var empty = 0;
+				tbId.find("input").each(function(){
+					if ($(this).is(":checked")){
+						console.log(empty);
+					}else{
+						empty= empty+1;
+					}
+				});
+				if(empty >= index){
+					alert("未选中任何文章");
+					return false;
+				}
+			})
+			$("#established").click(function(){
+				tbId.find("input").each(function(){
+					if ($(this).is(":checked")){
+						$(this).parent().parent().remove();
+					}else{
+						return true;
+					}
+				});
+			})
+		})();
+	</script>
+</body>
+</html>
